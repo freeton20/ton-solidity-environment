@@ -1,0 +1,10 @@
+ton-labs-contracts
+test.info
+*.tvc
+compile_data.txt
+debot_err.log
+keyfile.json
+keyfile.json.pub
+*abi.json
+*.code
+.idea
