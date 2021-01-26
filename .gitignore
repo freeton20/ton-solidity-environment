@@ -8,3 +8,4 @@ keyfile.json.pub
 *abi.json
 *.code
 .idea
+build
