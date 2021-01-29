@@ -1,19 +1,18 @@
 # Free TON Solidity Environment
 
+Example compile and deploy smart contract (Solidity) for TON network.
+
 ## Dependencies
 
-See [homebrew/Formula/tonos-cli.rb](https://github.com/tonsoft/homebrew-stable/blob/main/Formula/tonos-cli.rb)
-
-    brew install tonsoft/stable/tonos-cli
-
-See [homebrew/Formula/tvm-linker.rb](https://github.com/tonsoft/homebrew-stable/blob/main/Formula/tvm-linker.rb)
-
-    brew install --head tonsoft/stable/tvm-linker
-
-See [homebrew/Formula/ton-solc.rb](https://github.com/tonsoft/homebrew-stable/blob/main/Formula/tvm-solc.rb)
-
-    brew install tonsoft/stable/tvm-solc
+    brew install git
+    brew install docker
+    brew install node
 
 ## Develop
 
-   make test
+    yarn
+    yarn compile
+    yarn start # stat TON local node on http://localhost/graphql 
+    yarn deploy-local
+    yarn stop
+

@@ -1,0 +1,18 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "main": "sample.js",
+  "scripts": {
+    "deploy-local": "yarn compile && node sample.js",
+    "compile": "yarn linker && printf \"module.exports = {tvcInBase64: '%s', abi: require('./Hello.abi.json')};\" $(cat build/Hello.tvc | base64 -w0) > build/Hello.js",
+    "linker": "yarn solc && docker run --rm -it -e USER_AGREEMENT=yes -v $(pwd):/code -w /code tonlabs/compilers tvm_linker compile --lib contract/stdlib_sol.tvm --abi-json build/Hello.abi.json -o build/Hello.tvc build/Hello.code",
+    "solc": "mkdir -p build && docker run --rm -it -e USER_AGREEMENT=yes -v $(pwd):/code -w /code tonlabs/compilers solc contract/Hello.sol --output-dir build",
+    "stop": "docker rm --force ton-local || true",
+    "start": "yarn stop && docker run -d --name ton-local -e USER_AGREEMENT=yes -p 80:80 tonlabs/local-node"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@tonclient/core": "^1.5.3",
+    "@tonclient/lib-node": "^1.5.3"
+  }
+}
