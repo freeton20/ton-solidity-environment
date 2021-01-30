@@ -12,6 +12,7 @@ Example compile and deploy smart contract (Solidity) for TON network.
 
     yarn
     yarn compile
+    export TON_NODE_PORT=8080
     yarn start # stat TON local node on http://localhost/graphql 
     yarn deploy-local
     yarn stop

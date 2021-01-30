@@ -167,7 +167,7 @@ async function main(client) {
         const client = new TonClient({
             network: { 
                 // Local node URL here
-                server_address: 'http://localhost'
+                server_address: 'http://localhost:' + (process.env.TON_NODE_PORT || '80')
             }
         });
         console.log("Hello localhost TON!");
